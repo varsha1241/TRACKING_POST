@@ -1,0 +1,39 @@
+<div class="container padding-bottom-3x mb-1">
+    <div class="card mb-3">
+      <div class="p-4 text-center text-white text-lg bg-dark rounded-top"><span class="text-uppercase">Enter the customer details</span></div>
+      <div class="card-body">
+        <table class="table borderless">
+            <thead>
+              <tr>
+                <td>TRACKING ID : </td>
+                <td><input type="text"id="tracking" [(ngModel)]="cust.tracking" name="tracking"/></td>
+              </tr>
+              <tr>
+                <td>FROM ADDRESS ID : </td>
+                <td><input type="text" id="from" [(ngModel)]="cust.from_id" name="cust_id"/></td>
+              </tr>
+              <tr>
+                  <td>PRODUCT SHIPPED : </td>
+                  <td>
+                    <input type="radio" id="product" [(ngModel)]="cust.product_shiped" name="product_shipped" value="0"> YES
+                    <input type="radio" id="product" [(ngModel)]="cust.product_shiped" name="product_shipped" value="-1"> NO
+                  </td>
+                </tr>
+                <tr>
+              <tr>
+                  <td>EMAIL ID: </td>
+                  <td><input type="text" id="email" [(ngModel)]="cust.email" name="email_id"/></td>
+                </tr>
+                <tr>
+              <tr>
+                <td>PHONE NUMBER: </td>
+                <td><input type="text" id="phone" [(ngModel)]="cust.phone" name="phone"/></td>
+              </tr>
+              <tr>
+                  <td colspan="5"><button type="button" (click)="setValue()" class="btn btn-primary btn-lg btn-block">SUBMIT</button></td>
+              </tr>
+            </thead>
+        </table>
+    </div>
+    </div>
+</div>

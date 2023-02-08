@@ -1,0 +1,43 @@
+<div class="container padding-bottom-3x mb-1">
+    <div class="card mb-3">
+      <div class="p-4 text-center text-white text-lg bg-dark rounded-top"><span class="text-uppercase">Enter the intermediate address</span></div>
+      <div class="card-body">
+        <table class="table borderless">
+            <thead>
+              <tr>
+                <td>TRACKING ID : </td>
+                <td><input type="text"id="tracking" [(ngModel)]="cust.tracking" name="tracking" readonly/></td>
+              </tr>
+              <tr>
+                <td>ADDRESS ID : </td>
+                <td><input type="text" id="from" value={{cust.from_id}} [(ngModel)]="cust.from_id" name="cust_id" readonly/></td>
+              </tr>
+              <tr>
+                <td>PRODUCT STATUS : </td>
+                <td>
+                    <ng-container *ngIf="status=='1'">
+                        <input type="radio" name="status" value='2' [(ngModel)]="cust.product_shiped">PRODUCT OUT TO DELIVERY<br>
+                        <input type="radio" name="status" value='3' [(ngModel)]="cust.product_shiped">PRODUCT DELIVERED  
+                    </ng-container>
+                    <ng-container *ngIf="status=='2'">
+                        <input type="radio" name="status" value='3' [(ngModel)]="cust.product_shiped">PRODUCT DELIVERED
+                    </ng-container>
+                    <ng-container *ngIf="status=='0'">
+                          <input type="radio" name="status" value='1' [(ngModel)]="cust.product_shiped">PRODUCT IN TRANSIT<br>
+                          <input type="radio" name="status" value='2' [(ngModel)]="cust.product_shiped">PRODUCT OUT TO DELIVERY<br>
+                          <input type="radio" name="status" value='3' [(ngModel)]="cust.product_shiped">PRODUCT DELIVERED
+                    </ng-container>
+                  </td>
+              </tr>
+              <tr>
+                <td>PHONE NUMBER: </td>
+                <td><input type="text" id="phone" [(ngModel)]="cust.phone" name="phone" readonly/></td>
+              </tr>
+              <tr>
+                  <td colspan="5"><button type="button" (click)="setValue()" class="btn btn-primary btn-lg btn-block">SUBMIT</button></td>
+              </tr>
+            </thead>
+        </table>
+    </div>
+    </div>
+</div>

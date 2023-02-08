@@ -1,0 +1,58 @@
+<div class="container padding-bottom-3x mb-1">
+    <div class="card mb-3">
+      <div class="p-4 text-center text-white text-lg bg-dark rounded-top"><span class="text-uppercase">Enter the intermediate address</span></div>
+      <div class="card-body">
+        <table class="table borderless">
+            <thead>
+              <tr>
+                <td>TRACKING ID : </td>
+                <td><input type="text"id="tracking" [(ngModel)]="cust.track" name="tracking" readonly/></td>
+              </tr>
+              <tr>
+                <td>BILL AMOUNT : </td>
+                <td><input type="text" id="from" value={{cust.bill_amount}} [(ngModel)]="cust.bill_amount" name="bill_amount" readonly/></td>
+              </tr>
+              <tr>
+                  <td>ADDRESS : </td>
+                  <td><textarea id="address" rows="4" cols="50" [(ngModel)]="cust.address" name="address" readonly></textarea></td>
+                </tr>
+                <tr>
+              <tr>
+                <td>ESTIMATED DATE : </td>
+                <td><input type="date" (change)="checkdate($event)" id="date" [(ngModel)]="cust.date" name="date"/></td>
+              </tr>
+              <tr>
+                  <td>PRODUCT STATUS : </td>
+                  <td>
+                  <ng-container *ngIf="status=='1'">
+                      <input type="radio" name="status" value='2' [(ngModel)]="customer.product_shiped">PRODUCT OUT TO DELIVERY<br>
+                      <input type="radio" name="status" value='3' [(ngModel)]="customer.product_shiped">PRODUCT DELIVERED  
+                  </ng-container>
+                  <ng-container *ngIf="status=='2'">
+                      <input type="radio" name="status" value='3' [(ngModel)]="customer.product_shiped">PRODUCT DELIVERED
+                  </ng-container>
+                  <ng-container *ngIf="status=='0'">
+                        <input type="radio" name="status" value='1' [(ngModel)]="customer.product_shiped">PRODUCT IN TRANSIT<br>
+                        <input type="radio" name="status" value='2' [(ngModel)]="customer.product_shiped">PRODUCT OUT TO DELIVERY<br>
+                        <input type="radio" name="status" value='3' [(ngModel)]="customer.product_shiped">PRODUCT DELIVERED
+                  </ng-container>
+                </td>
+                </tr>
+              <tr>
+                <td>DELIVERY PIN : </td>
+                <td>
+                <select name="id" [(ngModel)]="cust.deliveryboypin" required>
+                        <option value="NA" selected disabled >DELIVERY PIN</option>
+                      <ng-container  *ngFor="let index of d">
+                        <option value={{index}}>{{index}}</option>
+                      </ng-container>
+                    </select>
+              </tr>
+              <tr>
+                  <td colspan="5"><button type="button" (click)="setValue()" class="btn btn-primary btn-lg btn-block">SUBMIT</button></td>
+              </tr>
+            </thead>
+        </table>
+    </div>
+    </div>
+</div>

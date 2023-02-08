@@ -1,0 +1,94 @@
+<div class="container">
+    <h3>COURIER DETAILS : {{id}} </h3>
+    <br>
+    <div id="htmlData">
+        <!-- <section class="jumbotron text-center" [ngxWatermark]="options">
+        </section> -->
+   
+    <div class="estimation">
+        <table class="table-striped">
+          <tr>
+            <td style="width:300px;">ESTIMATED DELIVERY DATE  </td>
+            <td><h6>{{couriers.date}}</h6></td>
+          </tr>
+          <tr>
+            <td>DELIVERY ADDRESS</td>
+            <td><h6>{{couriers.address}}</h6></td>
+          </tr>
+          <br>
+          <!--
+          <p><b>DELIVERY PERSON DETAILS</b></p>
+          <table class="table-striped ">
+            <tr>
+              <th></th>
+              <th></th>
+            </tr>
+            <tr>
+              <td style="width:300px;"><b>CONTACT NUMBER</b></td>
+              <td><h6>{{ddetails.phonenumber}}</h6></td>
+            </tr>
+            <tr>
+              <td style="width:300px;"><b>NAME </b></td>
+              <td><h6>{{ddetails.name}}</h6></td>
+            </tr>
+          </table> -->
+        </table>
+    </div>
+    <div class="details">
+        <div class="well well-lg bg-light">
+                <table class="table borderless">
+                        <thead>
+                          <tr>
+                            <th>Order Details</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <div>
+                            <tr *ngIf="couriers.bill_amount!=null; then callfunction; else exitfunction">
+                            </tr>
+                          </div>
+                        </tbody>
+                      </table>   
+        </div> 
+        <small>*** For more details refer to the email ***</small>  
+<br>
+    </div>
+   
+    </div>
+    <table>
+        <tr>
+            <!-- <td colspan="2"><button style="width: 150px;" (click)="modify()" class="btn btn-warning">SEND UPDATE</button></td> -->
+            <td colspan="4"></td>
+            <td colspan="2"><button style="width: 150px;" (click)="openpdf()" class="btn btn-info">DOWNLOAD</button></td>
+        </tr>
+    </table>
+  </div>
+  <ng-template #callfunction>
+      {{discounts()}}
+      <table class="table borderless secondry">
+          <tbody>
+            <tr>
+                <td>Bag Total</td>
+                <td>Rs. {{couriers.bill_amount}}</td>
+            </tr>
+            <tr>
+              <td>Delivery charges</td>
+              <td>Rs.<b style="color:lightgreen;"> {{conveience_fee}}</b></td>
+            </tr>
+            <tr>
+                <td>Discount</td>
+                <td>{{discount}}</td>
+            </tr>
+            <tr>
+                <td>Amount Paid</td>
+                <td>Rs. <b style="color:lightcoral;">{{amount_paid}}</b></td>
+            </tr>
+            
+          </tbody>
+        </table>     
+      
+  </ng-template>
+  
+  <ng-template #exitfunction>
+    {{notvalid()}}
+  </ng-template>

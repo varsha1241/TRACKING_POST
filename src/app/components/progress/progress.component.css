@@ -1,0 +1,22 @@
+.container
+{
+    padding-top: 0%;
+    margin-top: 0%;
+    padding-left:  30%;
+}
+
+.progress
+{
+    margin-top: 1%;
+}
+.details
+{
+    margin-top: 1%;
+}
+.borderless td, .borderless th {
+    border: none;
+}
+.secondry td
+{
+    padding-left: 100px;
+}

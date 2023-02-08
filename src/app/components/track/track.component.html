@@ -1,0 +1,158 @@
+<div *ngFor = "let prod of locations"> 
+<p *ngIf="prod.product_shiped=='0'; then level0neBlock"></p>
+<p *ngIf="prod.product_shiped=='1'; then leveltwoBlock"> </p>
+<p *ngIf="prod.product_shiped=='2'; then levelthreeBlock"> </p>
+<p *ngIf="prod.product_shiped=='3'; then levelfourBlock"> </p>
+</div>
+<ng-template #level0neBlock>
+  <div class="container padding-bottom-3x mb-1">
+      <div class="card mb-3">
+        <div class="p-4 text-center text-white text-lg bg-dark rounded-top"><span class="text-uppercase">Tracking Order No - </span><span class="text-medium">{{id}}</span></div>
+        <div class="card-body">
+          <table class="table borderless">
+              <thead>
+                <tr>
+                  <th>Shipment Details</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><i class="fa fa-check" style="color: green;"> PROCESSED</i></td>
+                  <td>PRODUCT PACKED</td>
+                </tr>
+                <tr>
+                  <td><i class="fa fa-check" style="color: green;"> PROCESSED</i></td>
+                  <td>PRODUCT SHIPMENT</td>
+                </tr>
+                <tr>
+                  <td><i class="fa fa-times" style="color: red;"> NOT PROCESSED</i></td>
+                  <td>PRODUCT IN TRANSPORT</td>
+                </tr>
+                <tr>
+                  <td><i class="fa fa-times" style="color: red;"> NOT PROCESSED</i></td>
+                  <td>PRODUCT OUT FOR DELIVERY</td>
+              </tr>
+              <tr>
+                <td><i class="fa fa-times" style="color: red;"> NOT PROCESSED</i></td>
+                <td>PRODUCT DELIVERED</td> 
+              </tr>
+              </tbody>
+            </table>
+        </div>
+      </div>
+    </div>
+</ng-template>
+<ng-template #leveltwoBlock>
+    <div class="container padding-bottom-3x mb-1">
+        <div class="card mb-3">
+          <div class="p-4 text-center text-white text-lg bg-dark rounded-top"><span class="text-uppercase">Tracking Order No - </span><span class="text-medium">{{id}}</span></div>
+          <div class="card-body">
+            <table class="table borderless">
+                <thead>
+                  <tr>
+                    <th>Shipment Details</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><i class="fa fa-check" style="color: green;"> PROCESSED</i></td>
+                    <td>PRODUCT PACKED</td>
+                  </tr>
+                  <tr>
+                    <td><i class="fa fa-check" style="color: green;"> PROCESSED</i></td>
+                    <td>PRODUCT SHIPMENT</td>
+                  </tr>
+                  <tr>
+                    <td><i class="fa fa-check" style="color: green;">PROCESSED</i></td>
+                    <td>PRODUCT IN TRANSPORT</td>
+                  </tr>
+                  <tr>
+                    <td><i class="fa fa-times" style="color: red;"> NOT PROCESSED</i></td>
+                    <td>PRODUCT OUT FOR DELIVERY</td>
+                </tr>
+                <tr>
+                  <td><i class="fa fa-times" style="color: red;"> NOT PROCESSED</i></td>
+                  <td>PRODUCT DELIVERED</td> 
+                </tr>
+                </tbody>
+              </table>
+          </div>
+        </div>
+      </div>
+</ng-template>
+<ng-template #levelthreeBlock>
+    <div class="container padding-bottom-3x mb-1">
+        <div class="card mb-3">
+          <div class="p-4 text-center text-white text-lg bg-dark rounded-top"><span class="text-uppercase">Tracking Order No - </span><span class="text-medium">{{id}}</span></div>
+          <div class="card-body">
+            <table class="table borderless">
+                <thead>
+                  <tr>
+                    <th>Shipment Details</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><i class="fa fa-check" style="color: green;"> PROCESSED</i></td>
+                    <td>PRODUCT PACKED</td>
+                  </tr>
+                  <tr>
+                    <td><i class="fa fa-check" style="color: green;"> PROCESSED</i></td>
+                    <td>PRODUCT SHIPMENT</td>
+                  </tr>
+                  <tr>
+                    <td><i class="fa fa-check" style="color: green;">PROCESSED</i></td>
+                    <td>PRODUCT IN TRANSPORT</td>
+                  </tr>
+                  <tr>
+                    <td><i class="fa fa-check" style="color: green;">PROCESSED</i></td>
+                    <td>PRODUCT OUT FOR DELIVERY</td>
+                </tr>
+                <tr>
+                  <td><i class="fa fa-times" style="color: red;"> NOT PROCESSED</i></td>
+                  <td>PRODUCT DELIVERED</td> 
+                </tr>
+                </tbody>
+              </table>
+          </div>
+        </div>
+      </div>
+</ng-template>
+<ng-template #levelfourBlock>
+    <div class="container padding-bottom-3x mb-1">
+        <div class="card mb-3">
+          <div class="p-4 text-center text-white text-lg bg-dark rounded-top"><span class="text-uppercase">Tracking Order No - </span><span class="text-medium">{{id}}</span></div>
+          <div class="card-body">
+            <table class="table borderless">
+                <thead>
+                  <tr>
+                    <th>Shipment Details</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><i class="fa fa-check" style="color: green;"> PROCESSED</i></td>
+                    <td>PRODUCT PACKED</td>
+                  </tr>
+                  <tr>
+                    <td><i class="fa fa-check" style="color: green;"> PROCESSED</i></td>
+                    <td>PRODUCT SHIPMENT</td>
+                  </tr>
+                  <tr>
+                    <td><i class="fa fa-check" style="color: green;">PROCESSED</i></td>
+                    <td>PRODUCT IN TRANSPORT</td>
+                  </tr>
+                  <tr>
+                    <td><i class="fa fa-check" style="color: green;">PROCESSED</i></td>
+                    <td>PRODUCT OUT FOR DELIVERY</td>
+                </tr>
+                <tr>
+                    <td><i class="fa fa-check" style="color: green;">PROCESSED</i></td>
+                  <td>PRODUCT DELIVERED</td> 
+                </tr>
+                </tbody>
+              </table>
+          </div>
+        </div>
+      </div>
+</ng-template>

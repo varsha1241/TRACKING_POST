@@ -1,0 +1,39 @@
+<div class="container">
+    <h2>COURIER DETAILS</h2>
+    <br>
+<table  class="table borderless">
+<!-- *ngIf="showContent" datatable="ng" [dtOptions]="dtOptions"> -->
+    <tr>
+        <th>TRACK ID</th>
+        <!-- <th>PAYMENT</th> -->
+        <!-- <th colspan="3">ADDRESS</th> -->
+        <th>ESTIMATED DATE</th>
+        <th>DP ID</th>
+        <th>PRODUCT STATUS</th>
+        <th></th>
+    </tr>
+    <tr *ngFor="let person of courier">
+        
+        <td>{{person.track}}</td>
+        <!-- <td>{{ person.bill_amount}}</td> -->
+        <!-- <td colspan="3">{{ person.address}}</td> -->
+        <td>{{ person.date}}</td>
+        <td>{{person.deliveryboypin}}</td>
+        <ng-container *ngFor="let j of customer">
+        <td *ngIf="person.track==j.tracking">
+            <p *ngIf="j.product_shiped=='0'">SHIPED</p>
+            <p *ngIf="j.product_shiped=='1'">IN TRANSIT</p>
+            <p *ngIf="j.product_shiped=='2'">OUT FOR DELIVERY</p>
+          
+        </td>
+        </ng-container>
+        <td><button (click)="modify(person.track)" class="btn btn-warning">MODIFY</button></td>
+        <td><button (click)="invoice(person.track)" class="btn btn-info">INVOICE</button></td>
+        <ng-container *ngFor="let j of customer">
+        <td *ngIf="person.track==j.tracking">
+            <button *ngIf="j.product_shiped=='3'" (click)="delete(person.track)" class="btn btn-danger">DELETE</button>
+        </td>
+        </ng-container>
+    </tr>
+</table>
+</div>

@@ -1,0 +1,53 @@
+<div class="container">
+    <!-- <div id="content" #content> -->
+    <div id="htmlData">
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th><img src="assets/image/RNTBCI.png" alt="..." width="65" class="mr-3 rounded-circle img-thumbnail shadow-sm"></th>
+              <th><h3>DELIVERY STATEMENT</h3></th>
+            </tr>
+            <tr>
+              <td><h6>{{dp}}</h6></td>
+              <td><h6>{{courier.track}}</h6></td>
+            </tr>
+            <tr>
+              <td><h6>{{da}}</h6></td>
+              <td><h6>{{courier.address}}</h6></td>
+            </tr>
+          </thead>
+          <table class="table-center">
+              <thead>
+                <tr>
+                  <td class="table-info">DETAILS</td>
+                  <td class="table-info">PRICE</td>
+                </tr>
+                <tr>
+                  <td>TOTAL COST </td>
+                  <td>{{courier.bill_amount}}</td>
+                </tr>
+                <tr>
+                  <td>DISCOUNT </td>
+                  <td>{{discount}}</td>
+                </tr>
+                <tr>
+                  <td>AMOUNT PAID</td>
+                  <td>{{bill}}</td>
+                </tr>
+    
+              </thead>
+          </table>
+        </table>
+        <p>Thank you for your purchase !! </p>
+      </div>
+      <div class="text-right">
+        <table>
+          <tr>
+            <td colspan="2"><button class="btn btn-success btn-block" (click)="openpdf()">Download PDF</button></td>
+            <!-- <td colspan="3"></td> -->
+             <!-- <td colspan="2"><button class="btn btn-success btn-block" >SEND EMAIL</button></td> -->
+          </tr>
+          </table>
+      </div>
+    </div>
+  

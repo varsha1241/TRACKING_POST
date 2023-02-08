@@ -1,0 +1,22 @@
+<div class="container padding-bottom-3x mb-1">
+    <div class="card mb-3">
+      <div class="p-4 text-center text-white text-lg bg-dark rounded-top"><span class="text-uppercase">Enter your Tracking Order No - Example [</span><span class="text-medium"> DTDC****** ]</span></div>
+      <div class="card-body">
+        <table style=" padding-top:30px"class="table borderless">
+            <thead>
+              <tr>
+                <td>CONSIGENT NUMBER : </td>
+                <td><input type="text" [(ngModel)]="id" name="id" placeholder="ENTER THE DTDC*******"/></td>
+              </tr>
+              <tr>
+                <!-- <ng-container *ngFor="let temp of c"> -->
+                    <!-- <ng-container *ngIf="temp==id"> -->
+                        <td colspan="5"><button type="button" (click)="clickEvent(id)" class="btn btn-primary btn-lg btn-block">SUBMIT</button></td>
+                    <!-- </ng-container> -->
+                <!-- </ng-container> -->
+              </tr>
+            </thead>
+        </table>
+    </div>
+    </div>
+</div>
